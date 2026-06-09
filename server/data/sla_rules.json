@@ -1,0 +1,30 @@
+[
+  {
+    "id": "SLA-001",
+    "priority": "Critical",
+    "first_response_minutes": 15,
+    "resolution_minutes": 240,
+    "description": "System-wide outages, security breaches, data loss"
+  },
+  {
+    "id": "SLA-002",
+    "priority": "High",
+    "first_response_minutes": 60,
+    "resolution_minutes": 480,
+    "description": "Major functionality impaired for multiple users"
+  },
+  {
+    "id": "SLA-003",
+    "priority": "Medium",
+    "first_response_minutes": 240,
+    "resolution_minutes": 1440,
+    "description": "Single user impacted, workaround available"
+  },
+  {
+    "id": "SLA-004",
+    "priority": "Low",
+    "first_response_minutes": 480,
+    "resolution_minutes": 2880,
+    "description": "Questions, minor requests, feature asks"
+  }
+]

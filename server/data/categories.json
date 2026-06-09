@@ -1,0 +1,32 @@
+[
+  {
+    "id": "CAT-001",
+    "name": "Network",
+    "description": "WiFi, VPN, connectivity, firewall, DNS issues"
+  },
+  {
+    "id": "CAT-002",
+    "name": "Hardware",
+    "description": "Laptops, monitors, peripherals, printers, docking stations"
+  },
+  {
+    "id": "CAT-003",
+    "name": "Software",
+    "description": "Application installs, updates, crashes, licensing"
+  },
+  {
+    "id": "CAT-004",
+    "name": "Access/Permissions",
+    "description": "Account access, password resets, role changes, MFA"
+  },
+  {
+    "id": "CAT-005",
+    "name": "Email",
+    "description": "Outlook, email delivery, calendar, shared mailboxes"
+  },
+  {
+    "id": "CAT-006",
+    "name": "Other",
+    "description": "General IT questions, training requests, other"
+  }
+]

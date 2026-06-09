@@ -1,0 +1,79 @@
+[
+  {
+    "id": "AGT-001",
+    "name": "Marcus Rivera",
+    "email": "marcus.r@techcorp.com",
+    "role": "L1",
+    "department": "IT Support",
+    "status": "Available",
+    "skills": ["Hardware", "Email", "Other"],
+    "hire_date": "2023-06-15",
+    "avatar_initials": "MR"
+  },
+  {
+    "id": "AGT-002",
+    "name": "Priya Sharma",
+    "email": "priya.s@techcorp.com",
+    "role": "L1",
+    "department": "IT Support",
+    "status": "Busy",
+    "skills": ["Software", "Access/Permissions", "Email"],
+    "hire_date": "2024-01-10",
+    "avatar_initials": "PS"
+  },
+  {
+    "id": "AGT-003",
+    "name": "James Okonkwo",
+    "email": "james.o@techcorp.com",
+    "role": "L1",
+    "department": "IT Support",
+    "status": "Available",
+    "skills": ["Hardware", "Network", "Other"],
+    "hire_date": "2024-03-22",
+    "avatar_initials": "JO"
+  },
+  {
+    "id": "AGT-004",
+    "name": "Elena Vasquez",
+    "email": "elena.v@techcorp.com",
+    "role": "L2",
+    "department": "IT Engineering",
+    "status": "Busy",
+    "skills": ["Network", "Software", "Hardware"],
+    "hire_date": "2022-09-01",
+    "avatar_initials": "EV"
+  },
+  {
+    "id": "AGT-005",
+    "name": "David Kim",
+    "email": "david.k@techcorp.com",
+    "role": "L2",
+    "department": "IT Engineering",
+    "status": "Available",
+    "skills": ["Software", "Access/Permissions", "Network"],
+    "hire_date": "2023-02-14",
+    "avatar_initials": "DK"
+  },
+  {
+    "id": "AGT-006",
+    "name": "Aisha Patel",
+    "email": "aisha.p@techcorp.com",
+    "role": "L2",
+    "department": "IT Engineering",
+    "status": "Away",
+    "skills": ["Network", "Hardware", "Software"],
+    "hire_date": "2022-11-30",
+    "avatar_initials": "AP"
+  },
+  {
+    "id": "AGT-007",
+    "name": "Robert Chen",
+    "email": "robert.c@techcorp.com",
+    "role": "L3",
+    "department": "IT Architecture",
+    "status": "Available",
+    "skills": ["Network", "Software", "Hardware", "Access/Permissions"],
+    "hire_date": "2020-04-01",
+    "avatar_initials": "RC"
+  }
+]

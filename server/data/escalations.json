@@ -1,0 +1,90 @@
+[
+  {
+    "id": "ESC-001",
+    "ticket_id": "TKT-005",
+    "escalated_from": "AGT-004",
+    "escalated_to": "AGT-007",
+    "reason": "Network outage affecting 120+ users required L3 architecture review to identify failed core switch module",
+    "escalated_at": "2025-11-20T09:00:00Z",
+    "resolved_at": "2025-11-20T11:15:00Z",
+    "status": "Resolved",
+    "notes": "Root cause was a failed line card on the Building B distribution switch. Replaced and restored service."
+  },
+  {
+    "id": "ESC-002",
+    "ticket_id": "TKT-001",
+    "escalated_from": "AGT-003",
+    "escalated_to": "AGT-006",
+    "reason": "VPN disconnect pattern pointed to a wireless controller configuration issue beyond L1 scope",
+    "escalated_at": "2025-11-04T11:30:00Z",
+    "resolved_at": "2025-11-04T16:45:00Z",
+    "status": "Resolved",
+    "notes": "Wireless controller had conflicting DTLS settings causing VPN tunnel instability. Updated controller config."
+  },
+  {
+    "id": "ESC-003",
+    "ticket_id": "TKT-011",
+    "escalated_from": "AGT-005",
+    "escalated_to": "AGT-007",
+    "reason": "Jenkins memory leak required L3 investigation into JVM tuning and plugin compatibility",
+    "escalated_at": "2025-12-11T14:00:00Z",
+    "resolved_at": "2025-12-12T05:30:00Z",
+    "status": "Resolved",
+    "notes": "Identified outdated pipeline plugin causing memory leak. Updated plugin and increased JVM heap allocation."
+  },
+  {
+    "id": "ESC-004",
+    "ticket_id": "TKT-028",
+    "escalated_from": "AGT-005",
+    "escalated_to": "AGT-007",
+    "reason": "Split-tunnel policy changes required network architecture review and firewall rule updates",
+    "escalated_at": "2026-02-20T14:00:00Z",
+    "resolved_at": "2026-02-21T15:30:00Z",
+    "status": "Resolved",
+    "notes": "Updated VPN group policy for contractor OU to enable split-tunnel. Verified with three contractor test accounts."
+  },
+  {
+    "id": "ESC-005",
+    "ticket_id": "TKT-009",
+    "escalated_from": "AGT-002",
+    "escalated_to": "AGT-005",
+    "reason": "Account was in a locked state that self-service and L1 tools could not resolve. Required AD admin access.",
+    "escalated_at": "2025-12-06T17:30:00Z",
+    "resolved_at": "2025-12-07T09:15:00Z",
+    "status": "Resolved",
+    "notes": "Account had stale Kerberos tokens from pre-leave sessions. Cleared tokens and reset credentials at AD level."
+  },
+  {
+    "id": "ESC-006",
+    "ticket_id": "TKT-012",
+    "escalated_from": "AGT-004",
+    "escalated_to": "AGT-007",
+    "reason": "Firewall rule rollback requires change advisory board approval and L3 network architecture oversight due to production impact",
+    "escalated_at": "2025-12-15T07:15:00Z",
+    "resolved_at": null,
+    "status": "Active",
+    "notes": "Emergency CAB convened. Identifying which of the 47 new rules is blocking payment API endpoints."
+  },
+  {
+    "id": "ESC-007",
+    "ticket_id": "TKT-023",
+    "escalated_from": "AGT-006",
+    "escalated_to": "AGT-007",
+    "reason": "Site-to-site VPN tunnel instability requires coordination with AWS support and ISP. L3 architecture engagement needed.",
+    "escalated_at": "2026-02-03T05:00:00Z",
+    "resolved_at": null,
+    "status": "Active",
+    "notes": "AWS support case opened. ISP investigating possible BGP route flapping on their end."
+  },
+  {
+    "id": "ESC-008",
+    "ticket_id": "TKT-031",
+    "escalated_from": "AGT-004",
+    "escalated_to": "AGT-007",
+    "reason": "SCCM patch deployment failure pattern suggests Group Policy conflict. Needs L3 review of endpoint security stack interactions.",
+    "escalated_at": "2026-03-04T14:00:00Z",
+    "resolved_at": null,
+    "status": "Active",
+    "notes": "Error 0x80070005 indicates access denied. Investigating whether CrowdStrike Falcon is blocking the SCCM agent."
+  }
+]
