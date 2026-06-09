@@ -92,5 +92,16 @@ export const api = {
   async getCategories() {
     const response = await axios.get(`${API_BASE_URL}/categories`)
     return response.data
+  },
+
+  // Comments
+  async getComments(ticketId) {
+    const response = await axios.get(`${API_BASE_URL}/tickets/${ticketId}/comments`)
+    return response.data
+  },
+
+  async createComment(ticketId, data) {
+    const response = await axios.post(`${API_BASE_URL}/tickets/${ticketId}/comments`, data)
+    return response.data
   }
 }

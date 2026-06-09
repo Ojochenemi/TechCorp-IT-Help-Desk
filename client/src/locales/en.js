@@ -111,6 +111,14 @@ export default {
     medium: 'Medium',
     low: 'Low'
   },
+  comments: {
+    title: 'Comments',
+    noComments: 'No comments yet.',
+    placeholder: 'Write a comment...',
+    post: 'Post Comment',
+    namePlaceholder: 'Your name',
+    emailPlaceholder: 'Your email'
+  },
   common: {
     loading: 'Loading...',
     error: 'An error occurred',

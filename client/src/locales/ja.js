@@ -111,6 +111,14 @@ export default {
     medium: '中',
     low: '低'
   },
+  comments: {
+    title: 'コメント',
+    noComments: 'コメントはまだありません。',
+    placeholder: 'コメントを入力...',
+    post: 'コメントを投稿',
+    namePlaceholder: '名前',
+    emailPlaceholder: 'メールアドレス'
+  },
   common: {
     loading: '読み込み中...',
     error: 'エラーが発生しました',

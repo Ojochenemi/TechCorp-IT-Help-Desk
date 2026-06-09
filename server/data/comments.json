@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": "CMT-001",
+    "ticket_id": "TKT-001",
+    "author_name": "Sarah Chen",
+    "author_email": "sarah.chen@techcorp.com",
+    "body": "I've reproduced the issue. It appears to be related to the latest browser update. Working on a fix now.",
+    "created_at": "2026-01-15T10:30:00"
+  },
+  {
+    "id": "CMT-002",
+    "ticket_id": "TKT-001",
+    "author_name": "John Martinez",
+    "author_email": "john.martinez@techcorp.com",
+    "body": "Can you confirm which browser version you're using? This will help narrow down the root cause.",
+    "created_at": "2026-01-15T11:45:00"
+  },
+  {
+    "id": "CMT-003",
+    "ticket_id": "TKT-002",
+    "author_name": "Priya Patel",
+    "author_email": "priya.patel@techcorp.com",
+    "body": "Password reset email has been sent. Please check your spam folder if you don't see it within 5 minutes.",
+    "created_at": "2026-01-16T09:15:00"
+  },
+  {
+    "id": "CMT-004",
+    "ticket_id": "TKT-003",
+    "author_name": "Sarah Chen",
+    "author_email": "sarah.chen@techcorp.com",
+    "body": "Escalating to the network team for further investigation. The issue affects multiple users in the same subnet.",
+    "created_at": "2026-01-17T14:00:00"
+  },
+  {
+    "id": "CMT-005",
+    "ticket_id": "TKT-003",
+    "author_name": "Tom Wilson",
+    "author_email": "tom.wilson@techcorp.com",
+    "body": "Network team has identified a misconfigured VLAN. Estimated resolution time is 2 hours.",
+    "created_at": "2026-01-17T16:30:00"
+  }
+]

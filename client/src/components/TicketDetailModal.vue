@@ -58,17 +58,71 @@
             <span class="tag" v-for="tag in ticket.tags" :key="tag">{{ tag }}</span>
           </div>
         </div>
+        <div class="detail-section comments-section">
+          <h4>{{ t('comments.title') }}</h4>
+          <div v-if="commentsLoading" class="comments-loading">{{ t('common.loading') }}</div>
+          <div v-else>
+            <div v-if="comments.length === 0" class="no-comments">{{ t('comments.noComments') }}</div>
+            <div v-else class="comments-list">
+              <div class="comment" v-for="comment in comments" :key="comment.id">
+                <div class="comment-header">
+                  <span class="comment-author">{{ comment.author_name }}</span>
+                  <span class="comment-date">{{ formatDateTime(comment.created_at) }}</span>
+                </div>
+                <p class="comment-body">{{ comment.body }}</p>
+              </div>
+            </div>
+            <form class="comment-form" @submit.prevent="submitComment">
+              <div class="comment-form-row">
+                <input v-model="newComment.author_name" :placeholder="t('comments.namePlaceholder')" required />
+                <input v-model="newComment.author_email" :placeholder="t('comments.emailPlaceholder')" type="email" required />
+              </div>
+              <textarea v-model="newComment.body" :placeholder="t('comments.placeholder')" rows="3" required></textarea>
+              <button type="submit" class="post-btn" :disabled="submitting">{{ t('comments.post') }}</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { formatDateTime } from '../utils/formatters'
+import { api } from '../api'
+import { useI18n } from '../composables/useI18n'
 
 const props = defineProps({ isOpen: Boolean, ticket: Object })
 defineEmits(['close'])
+
+const { t } = useI18n()
+
+const comments = ref([])
+const commentsLoading = ref(false)
+const submitting = ref(false)
+const newComment = ref({ author_name: '', author_email: '', body: '' })
+
+watch(() => props.ticket?.id, async (id) => {
+  if (!id) return
+  commentsLoading.value = true
+  try {
+    comments.value = await api.getComments(id)
+  } finally {
+    commentsLoading.value = false
+  }
+}, { immediate: true })
+
+async function submitComment() {
+  submitting.value = true
+  try {
+    const comment = await api.createComment(props.ticket.id, newComment.value)
+    comments.value.push(comment)
+    newComment.value = { author_name: '', author_email: '', body: '' }
+  } finally {
+    submitting.value = false
+  }
+}
 
 const statusClass = computed(() => {
   if (!props.ticket) return ''
@@ -218,4 +272,71 @@ const priorityClass = computed(() => {
   font-size: 0.75rem;
   font-weight: 500;
 }
+
+.comments-section { border-top: 1px solid #e2e8f0; padding-top: 1.25rem; }
+
+.comments-loading, .no-comments {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  padding: 0.5rem 0;
+}
+
+.comments-list { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem; }
+
+.comment {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.375rem;
+}
+
+.comment-author { font-size: 0.8125rem; font-weight: 600; color: #0f172a; }
+.comment-date { font-size: 0.75rem; color: #94a3b8; }
+.comment-body { font-size: 0.875rem; color: #334155; line-height: 1.5; margin: 0; }
+
+.comment-form { display: flex; flex-direction: column; gap: 0.625rem; }
+
+.comment-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.625rem; }
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #0f172a;
+  background: #ffffff;
+  box-sizing: border-box;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+  outline: none;
+  border-color: #94a3b8;
+}
+
+.post-btn {
+  align-self: flex-end;
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.post-btn:hover:not(:disabled) { background: #1e293b; }
+.post-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 </style>
